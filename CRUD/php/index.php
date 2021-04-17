@@ -1,3 +1,9 @@
+<?php
+require_once "objetos/conect.php";
+require_once "objetos/tarefa.php";
+$tarefas = new Tarefa;
+$link = new Connect;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +28,8 @@
 		<th></th>
 	</thead>
 	<tbody>
-		<td>00</td>
+
+		<td></td>
 		<td width="50%">Atividade Teste</td>
 		<td width="15%">08:00</td>
 		<td width="7%"><button class="btn-floating orange"><i class="material-icons" >edit</i></button> </td>
@@ -36,7 +43,7 @@
   <div id="modal1" class="modal" style="height: 80vh;">
     <div class="modal-content">
       <fieldset  style="border-radius: 7px;"><legend class="center"><h4>Novo Produto</h4></legend>
-      <form>
+      <form method="POST" action="acoesPHP/acoes.php">
       	<div class="row">
       	<div class="input-field col l8 m12 s12">
       		<label for="nome">Nome</label>
@@ -49,18 +56,19 @@
   </div>
   <div class="row">
   <div class="input-field col l11">
-  	<textarea class="materialize-textarea"></textarea>
-  	<label for="descricao">Descrição</label>
+  	<textarea class="materialize-textarea" name="desc" id="descricao"></textarea>
+  	<label for="desc">Descrição</label>
   </div>
 </div>
+      <div class="center">
+      <button class="btn green modal-close" name="add" style="margin-right: 1vw;">Adicionar</button>
+      <button class="btn red modal-close">cancelar</button>
+    </div>
+
       </form>
   </fieldset>
     </div>
     <div class="modal-footer center">
-    	<div class="center">
-    	<button class="btn green modal-close" style="margin-right: 1vw;">Adicionar</button>
-    	<button class="btn red modal-close">cancelar</button>
-    </div>
     </div>
   </div>
 
